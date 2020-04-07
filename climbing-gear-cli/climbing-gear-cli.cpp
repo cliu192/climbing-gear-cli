@@ -7,21 +7,31 @@
 #include "Gear.h"
 #include "Rope.h"
 #include "BelayDevice.h"
+#include "Carabiner.h"
+#include "Cam.h"
 
 int main()
 {
+
     std::vector<std::unique_ptr<Gear>> gearInventory;
 
     auto rope1 = std::make_unique<Rope>("Petzl", "Arial Rope", 70);
     auto rope2 = std::make_unique<Rope>("Mammut", "Infinity Dry Rope", 70);
     auto belayDevice1 = std::make_unique<BelayDevice>("Black Diamond", "ATC Guide", true);
     auto belayDevice2 = std::make_unique<BelayDevice>("Black Diamond", "ATC", false);
+    auto carabiner1 = std::make_unique<Carabiner>("Black Diamond", "Pear Carabiner", true);
+    auto cam1 = std::make_unique<Cam>("Black Diamond", "C4 Cam", 0.5);
+
+    std::cout << "The type of rope1 is: " << typeid(*rope1).name() << std::endl;
+    std::cout << "The type of belayDevice1 is: " << typeid(*belayDevice1).name() << std::endl;
 
 
     gearInventory.push_back(std::move(rope1));
     gearInventory.push_back(std::move(rope2));
     gearInventory.push_back(std::move(belayDevice1));
     gearInventory.push_back(std::move(belayDevice2));
+    gearInventory.push_back(std::move(carabiner1));
+    gearInventory.push_back(std::move(cam1));
 
 
     for (auto const& gear : gearInventory)
