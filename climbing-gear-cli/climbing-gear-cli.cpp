@@ -6,6 +6,7 @@
 #include <memory>
 #include "Gear.h"
 #include "Rope.h"
+#include "BelayDevice.h"
 
 int main()
 {
@@ -13,9 +14,15 @@ int main()
 
     auto rope1 = std::make_unique<Rope>("Petzl", "Arial Rope", 70);
     auto rope2 = std::make_unique<Rope>("Mammut", "Infinity Dry Rope", 70);
+    auto belayDevice1 = std::make_unique<BelayDevice>("Black Diamond", "ATC Guide", true);
+    auto belayDevice2 = std::make_unique<BelayDevice>("Black Diamond", "ATC", false);
+
 
     gearInventory.push_back(std::move(rope1));
     gearInventory.push_back(std::move(rope2));
+    gearInventory.push_back(std::move(belayDevice1));
+    gearInventory.push_back(std::move(belayDevice2));
+
 
     for (auto const& gear : gearInventory)
     {
