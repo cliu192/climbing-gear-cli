@@ -9,6 +9,7 @@
 #include "BelayDevice.h"
 #include "Carabiner.h"
 #include "Cam.h"
+#include "Nut.h"
 
 int main()
 {
@@ -21,6 +22,7 @@ int main()
     auto belayDevice2 = std::make_unique<BelayDevice>("Black Diamond", "ATC", false);
     auto carabiner1 = std::make_unique<Carabiner>("Black Diamond", "Pear Carabiner", true);
     auto cam1 = std::make_unique<Cam>("Black Diamond", "C4 Cam", 0.5);
+    auto nut1 = std::make_unique<Nut>("Black Diamond", "Nut", 4);
 
     std::cout << "The type of rope1 is: " << typeid(*rope1).name() << std::endl;
     std::cout << "The type of belayDevice1 is: " << typeid(*belayDevice1).name() << std::endl;
@@ -32,6 +34,7 @@ int main()
     gearInventory.push_back(std::move(belayDevice2));
     gearInventory.push_back(std::move(carabiner1));
     gearInventory.push_back(std::move(cam1));
+    gearInventory.push_back(std::move(nut1));
 
 
     for (auto const& gear : gearInventory)
