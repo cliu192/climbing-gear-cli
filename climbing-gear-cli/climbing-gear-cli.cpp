@@ -17,8 +17,8 @@ int main()
 
     std::vector<std::unique_ptr<Gear>> gearInventory;
 
-    auto rope1 = std::make_unique<Rope>("Petzl", "Arial Rope", 70);
-    auto rope2 = std::make_unique<Rope>("Mammut", "Infinity Dry Rope", 70);
+    auto rope1 = std::make_unique<Rope>("Petzl", "Arial Rope", 70, 9.5);
+    auto rope2 = std::make_unique<Rope>("Mammut", "Infinity Dry Rope", 70, 9.5);
     auto belayDevice1 = std::make_unique<BelayDevice>("Black Diamond", "ATC Guide", true);
     auto belayDevice2 = std::make_unique<BelayDevice>("Black Diamond", "ATC", false);
     auto carabiner1 = std::make_unique<Carabiner>("Black Diamond", "Pear Carabiner", true);
