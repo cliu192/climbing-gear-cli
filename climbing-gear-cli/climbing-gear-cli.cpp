@@ -25,6 +25,7 @@ int main()
     auto cam1 = std::make_unique<Cam>("Black Diamond", "C4 Cam", 0.5);
     auto nut1 = std::make_unique<Nut>("Black Diamond", "Nut", 4);
     auto shoes1 = std::make_unique<Shoes>("La Sportiva", "Miura Shoes", 40.5);
+    auto helmet1 = std::make_unique<Gear>("Black Diamond", "Vector Helmet", ":: size : M");
 
     std::cout << "The type of rope1 is: " << typeid(*rope1).name() << std::endl;
     std::cout << "The type of belayDevice1 is: " << typeid(*belayDevice1).name() << std::endl;
@@ -38,6 +39,7 @@ int main()
     gearInventory.push_back(std::move(cam1));
     gearInventory.push_back(std::move(nut1));
     gearInventory.push_back(std::move(shoes1));
+    gearInventory.push_back(std::move(helmet1));
 
     for (auto const& gear : gearInventory)
     {
