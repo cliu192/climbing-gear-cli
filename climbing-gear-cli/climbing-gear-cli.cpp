@@ -11,6 +11,8 @@
 #include "Cam.h"
 #include "Nut.h"
 #include "Shoes.h"
+#include "Sling.h"
+#include "Quickdraw.h"
 
 int main()
 {
@@ -26,6 +28,8 @@ int main()
     auto nut1 = std::make_unique<Nut>("Black Diamond", "Nut", 4);
     auto shoes1 = std::make_unique<Shoes>("La Sportiva", "Miura Shoes", 40.5);
     auto helmet1 = std::make_unique<Gear>("Black Diamond", "Vector Helmet", ":: size : M");
+    auto sling1 = std::make_unique<Sling>("Black Diamond", "Dyneema Sling", 60);
+    auto quickdraw1 = std::make_unique<Quickdraw>("Petzl", "Spirit Quickdraw", QuickdrawType::sport);
 
     std::cout << "The type of rope1 is: " << typeid(*rope1).name() << std::endl;
     std::cout << "The type of belayDevice1 is: " << typeid(*belayDevice1).name() << std::endl;
@@ -40,6 +44,8 @@ int main()
     gearInventory.push_back(std::move(nut1));
     gearInventory.push_back(std::move(shoes1));
     gearInventory.push_back(std::move(helmet1));
+    gearInventory.push_back(std::move(sling1));
+    gearInventory.push_back(std::move(quickdraw1));
 
     for (auto const& gear : gearInventory)
     {
